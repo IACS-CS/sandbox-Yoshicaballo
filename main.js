@@ -18,7 +18,7 @@ ti.output("I am Quagmire");
 ti.output("This is my room.");
 let rival = await ti.prompt("What is your rival's name?");
 ti.output("Oh it's " + rival + "!");
-if (await ti.promptYesOrNo("Do you want to see Quahog?")) {introRepeating = false}
-
+ (await ti.promptYesOrNo("Do you want to see Quahog?"))
+ 
 ti.output("No? Go away until you say yes.")
 }
