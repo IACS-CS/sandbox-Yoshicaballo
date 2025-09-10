@@ -2,7 +2,7 @@ import "./style.css";
 import { TextInterface } from "text-interface";
 
 let introRepeating = true;
-if (introRepeating){
+
 // loop this intro until saying yes
 let app = document.querySelector("#app");
 // Create a new "Text Interface"
@@ -18,7 +18,10 @@ ti.output("I am Quagmire");
 ti.output("This is my room.");
 let rival = await ti.prompt("What is your rival's name?");
 ti.output("Oh it's " + rival + "!");
- (await ti.promptYesOrNo("Do you want to see Quahog?"))
- 
-ti.output("No? Go away until you say yes.")
+if (introRepeating){
+let seeQuahog = await ti.promptYesOrNo("Do you want to see Quahog?");
+
+  if (seeQuahog=true) {(introRepeating=false);
+ ti.output("Good answer!");
+  }
 }
